@@ -12,9 +12,11 @@ public interface IKoushikServiceManagerAidlInterface extends android.os.IInterfa
     /**
          * Demonstrates some basic types that you can use as parameters
          * and return values in AIDL.
-         *///define your custom function here with any parameter
+         *///    void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
+    //            double aDouble, String aString);
+    //define your custom function here with any parameter
 
-    @Override public void blinkblink() throws android.os.RemoteException
+    @Override public void blinkBulb() throws android.os.RemoteException
     {
     }
     @Override
@@ -22,7 +24,6 @@ public interface IKoushikServiceManagerAidlInterface extends android.os.IInterfa
       return null;
     }
   }
-  //Stub is created
   /** Local-side IPC implementation stub class. */
   public static abstract class Stub extends android.os.Binder implements com.example.aidlcreationdemo.IKoushikServiceManagerAidlInterface
   {
@@ -61,10 +62,10 @@ public interface IKoushikServiceManagerAidlInterface extends android.os.IInterfa
           reply.writeString(descriptor);
           return true;
         }
-        case TRANSACTION_blinkblink:
+        case TRANSACTION_blinkBulb:
         {
           data.enforceInterface(descriptor);
-          this.blinkblink();
+          this.blinkBulb();
           reply.writeNoException();
           return true;
         }
@@ -92,17 +93,19 @@ public interface IKoushikServiceManagerAidlInterface extends android.os.IInterfa
       /**
            * Demonstrates some basic types that you can use as parameters
            * and return values in AIDL.
-           *///define your custom function here with any parameter
+           *///    void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
+      //            double aDouble, String aString);
+      //define your custom function here with any parameter
 
-      @Override public void blinkblink() throws android.os.RemoteException
+      @Override public void blinkBulb() throws android.os.RemoteException
       {
         android.os.Parcel _data = android.os.Parcel.obtain();
         android.os.Parcel _reply = android.os.Parcel.obtain();
         try {
           _data.writeInterfaceToken(DESCRIPTOR);
-          boolean _status = mRemote.transact(Stub.TRANSACTION_blinkblink, _data, _reply, 0);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_blinkBulb, _data, _reply, 0);
           if (!_status && getDefaultImpl() != null) {
-            getDefaultImpl().blinkblink();
+            getDefaultImpl().blinkBulb();
             return;
           }
           _reply.readException();
@@ -114,7 +117,7 @@ public interface IKoushikServiceManagerAidlInterface extends android.os.IInterfa
       }
       public static com.example.aidlcreationdemo.IKoushikServiceManagerAidlInterface sDefaultImpl;
     }
-    static final int TRANSACTION_blinkblink = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
+    static final int TRANSACTION_blinkBulb = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
     public static boolean setDefaultImpl(com.example.aidlcreationdemo.IKoushikServiceManagerAidlInterface impl) {
       // Only one user of this interface can use this function
       // at a time. This is a heuristic to detect if two different
@@ -135,7 +138,9 @@ public interface IKoushikServiceManagerAidlInterface extends android.os.IInterfa
   /**
        * Demonstrates some basic types that you can use as parameters
        * and return values in AIDL.
-       *///define your custom function here with any parameter
+       *///    void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
+  //            double aDouble, String aString);
+  //define your custom function here with any parameter
 
-  public void blinkblink() throws android.os.RemoteException;
+  public void blinkBulb() throws android.os.RemoteException;
 }
